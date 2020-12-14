@@ -1,0 +1,13 @@
+<h1>Rails Blog</h1>
+<section>
+  <% if @blog_posts.empty? %>
+  <p>No posts available.</p>
+  <% end %>
+  <%= link_to 'Create new post', new_blog_post_path %>
+  <% @blog_posts.each do |blog_post| %>
+  <div>
+    <h3><%= blog_post.title %></h3>
+    <p>By: <%= blog_post.user.username %></p>
+  </div>
+  <% end %>
+</section>
